@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Klasa per Studentin
+        function Studenti(name, surname, dateofbirth, id, level){
+            this.name = name;
+            this.surname = surname;
+            this.dateofbirth = dateofbirth;
+            this.id = id;
+            this.level = level;
+        }
+
+        // Metoda me i shfaq detajet per studentin
+        Studenti.prototype.displayDetails = function(){
+            console.log("Name: " + this.name);
+            console.log("Surname: "+ this.surname);
+            console.log("Date of Birth: "+ this.dateofbirth);
+            console.log("ID: "+ this.id);
+            console.log("Level: "+ this.level);
+        }
+
+        // Klasa per universitetin
+        function Universiteti(){
+            this.university = [];
+        }
+
+        // Metoda addStudent
+        Universiteti.prototype.addStudent = function(student){
+            this.students.push(student);
+        }
+
+        // Metoda removeStudent
+        Universiteti.prototype.removeStudent = function(student){
+            this.students.pop(student);
+        }
+
+        // Metoda mi shfaq krejt studentat ne university
+        Universiteti.prototype.displayStudents = function(){
+            console.log("Studentat qe jane ne universitet");
+            for(var i=0; i < this.university.length; i++){
+                console.log("Student"+ (i+1) + " : ");
+                this.university[i].displayDetails();
+            }
+        }
+
+        // Krijimi i studentave te universitetit
+        var studentat = new Universiteti();
+
+        // Krijimi i studentave
+        var student1 = new Studenti("Napoleon"+ "Hill"+ 1988 + 45 + 97);
+        var student2 = new Studenti("Colleen"+ "Hoover"+ 2000 + 56 + 63);
+        var student3 = new Studenti("Nazmi"+ "Rrahmani"+ 1999 + 73 + 74);
+
+        // I kena vendos te dhenat e studentave
+        studentat.addStudent(student1);
+        studentat.addStudent(student2);
+        studentat.addStudent(student3);
+
+        studentat.displayStudents();
+
+    </script>
+</body>
+</html>
