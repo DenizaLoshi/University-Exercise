@@ -28,42 +28,42 @@
 
         // Klasa per universitetin
         function Universiteti(){
-            this.university = [];
+            this.Students = [];
         }
 
         // Metoda addStudent
         Universiteti.prototype.addStudent = function(student){
-            this.students.push(student);
+            this.Students.push(student);
         }
 
         // Metoda removeStudent
         Universiteti.prototype.removeStudent = function(student){
-            this.students.pop(student);
+            this.Students.pop(student);
         }
 
         // Metoda mi shfaq krejt studentat ne university
         Universiteti.prototype.displayStudents = function(){
             console.log("Studentat qe jane ne universitet");
-            for(var i=0; i < this.university.length; i++){
+            for(var i=0; i < this.Students.length; i++){
                 console.log("Student"+ (i+1) + " : ");
-                this.university[i].displayDetails();
+                this.Students[i].displayDetails();
             }
         }
 
         // Krijimi i studentave te universitetit
-        var studentat = new Universiteti();
+        var universiteti = new Universiteti();
 
         // Krijimi i studentave
-        var student1 = new Studenti("Napoleon"+ "Hill"+ 1988 + 45 + 97);
-        var student2 = new Studenti("Colleen"+ "Hoover"+ 2000 + 56 + 63);
-        var student3 = new Studenti("Nazmi"+ "Rrahmani"+ 1999 + 73 + 74);
+        var student1 = new Studenti("Napoleon", "Hill", " 18/6/2005" , 45 , 97);
+        var student2 = new Studenti("Colleen", "Hoover", 2000 , 56 , 63);
+        var student3 = new Studenti("Nazmi", "Rrahmani", 1999 , 73 , 74);
 
         // I kena vendos te dhenat e studentave
-        studentat.addStudent(student1);
-        studentat.addStudent(student2);
-        studentat.addStudent(student3);
+        universiteti.addStudent(student1);
+        universiteti.addStudent(student2);
+        universiteti.addStudent(student3);
 
-        studentat.displayStudents();
+        universiteti.displayStudents();
 
     </script>
 </body>
